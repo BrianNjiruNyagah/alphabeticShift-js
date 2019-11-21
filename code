@@ -1,0 +1,18 @@
+function alphabeticShift(inputString) {
+    //array created contains a single character from the word given
+    var arrayOfWords = inputString.split('');
+    //array will contain the newly generated characters
+    var newWords = [];
+    //loops through the array to perform the action of getting new characters
+    for(x in arrayOfWords){
+        //checks when the end of the alphabet is to return it back to 'a' 
+        if(arrayOfWords[x].charCodeAt(0) == 122){
+            newWords.push('a');
+        }else{
+            //gets the next alphabet letter + 1
+            newWords.push(String.fromCharCode(arrayOfWords[x].charCodeAt(0)+1));
+        }
+    }
+    return newWords.join('');
+    
+}
